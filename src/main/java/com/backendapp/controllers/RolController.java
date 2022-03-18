@@ -1,0 +1,26 @@
+package com.backendapp.controllers;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.backendapp.models.entity.Rol;
+import com.backendapp.service.IRolService;
+
+@CrossOrigin(origins = { "http://localhost:4200" })
+@RestController
+@RequestMapping("/api")
+public class RolController {
+
+	@Autowired
+	private IRolService rolService;
+
+	@GetMapping("/roles")
+	public List<Rol> listRoles() {
+		return rolService.findAllRoles();
+	}
+}

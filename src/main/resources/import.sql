@@ -1,0 +1,1 @@
+INSERT INTO `rol` (`id`, `name`) VALUES (NULL, 'ADMINISTRADOR'), (NULL, 'AUDITOR'), (NULL, 'AUXILIAR');
